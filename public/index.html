@@ -28,7 +28,7 @@
                             <ul id="endpoint"></ul>
                         </div>
                     </div>
-                    <form method="POST" action="/cars" id="car-form">
+                    <form method="POST" id="createForm">
                         <div class="row mb-2">
                             <label class="col-3 col-form-label" for="name">Nama</label>
                             <div class="col-9">
@@ -57,10 +57,10 @@
                             <div class="input-group col-9 w-75">
                                 <input class="form-control" type="url" name="image_url" id="image_url"
                                     placeholder="https://...">
-                                <button class="btn btn-success" type="button" id="btn_upload">Upload</button>
+                                <button class="btn btn-success" type="button" id="btn_upload" onclick="createForm.anu.click()">Upload</button>
                             </div>
                         </div>
-                        <input class="form-control" type="file" name="anu" id="anu" hidden />
+                        <input class="form-control" type="file" name="anu" id="anu" hidden onchange="uploadImage(this, createForm.image_url)">
                         <button type="submit" class="btn btn-primary w-100 mt-2">Tambah Data</button>
                     </form>
                 </div>
@@ -75,6 +75,30 @@
                 </div>
 
                 <div id="result" class="row row-cols-1 row-cols-lg-2 align-content-center g-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel">Rincian Mobil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0 py-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Perbarui Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
             </div>
         </div>
     </div>
