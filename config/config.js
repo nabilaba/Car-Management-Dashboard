@@ -7,6 +7,7 @@ module.exports = {
     database: "ch5_development",
     host: "localhost",
     dialect: "postgres",
+    port: 8000,
   },
   test: {
     username: "postgres",
@@ -14,6 +15,7 @@ module.exports = {
     database: "ch5_test",
     host: "localhost",
     dialect: "postgres",
+    port: 8000,
   },
   production: {
     username: process.env.PGUSER,
@@ -21,5 +23,6 @@ module.exports = {
     database: process.env.PGDATABASE,
     host: process.env.PGHOST,
     dialect: "postgres",
+    port: process.env.PGPORT,
   },
 };
