@@ -7,6 +7,7 @@ module.exports = {
     database: "ch5_development",
     host: "localhost",
     dialect: "postgres",
+    port: 8000,
   },
   test: {
     username: "postgres",
@@ -14,12 +15,14 @@ module.exports = {
     database: "ch5_test",
     host: "localhost",
     dialect: "postgres",
+    port: 8000,
   },
   production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
+    username: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
+    host: process.env.PGHOST,
     dialect: "postgres",
+    port: process.env.PGPORT,
   },
 };
