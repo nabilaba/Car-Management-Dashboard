@@ -4,7 +4,7 @@ const db = require("./models");
 const carsRoute = require("./routes/cars.routes");
 const { seedingCars } = require("./utils/seeding");
 const cors = require("cors");
-const config = require("./config/config")[process.env.NODE_ENV || "development"];
+const port = process.env.PORT || 8000;
 
 db.sequelize.sync();
 
@@ -18,6 +18,6 @@ app.use("/", express.static("public"));
 app.use("/uploads", express.static("uploads"));
 app.use("/cars", carsRoute);
 
-app.listen(config.port, () => {
-  console.log(`Server running at ${config.host}:${config.port}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}.`);
 });
