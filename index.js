@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-const port = 8000;
+const port = process.env.PORT || 8000;
 const carsRoute = require("./routes/cars.routes");
 const { seedingCars } = require("./utils/seeding");
 const cors = require("cors");
