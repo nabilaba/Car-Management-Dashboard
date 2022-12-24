@@ -6,9 +6,9 @@ const { seedingCars } = require("./utils/seeding");
 const cors = require("cors");
 const port = process.env.PORT || 8000;
 
-db.sequelize.sync();
-
-seedingCars(db.sequelize);
+db.sequelize.sync().then(() => {
+  seedingCars(db.sequelize);
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
